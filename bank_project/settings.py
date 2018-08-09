@@ -24,8 +24,7 @@ load_dotenv(dotenv_path=BASE_DIR+'/bank_project/.env')
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.environ('SECRET_KEY')
-SECRET_KEY='esto2jnc-ids5+fa0+y()5te0y#lm-+#59x__flged(yos9ssi'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -92,7 +91,7 @@ WSGI_APPLICATION = 'bank_project.wsgi.application'
 # }
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ('DATABASE_URL')
+        default=os.environ.get('DATABASE_URL')
     )
 }
 
